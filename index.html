@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP Auto-system | นวัตกรรมบ้านอัจฉริยะ</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C5A059;
+            --accent-gold: #D4AF37;
+            --dark-text: #2c2c2c;
+            --light-bg: #FCFBFA;
+            --card-bg: #ffffff;
+            --gray-text: #666;
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Kanit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--body-font);
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: var(--heading-font);
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin-left: 15px;
+        }
+
+        .nav-links a {
+            color: var(--dark-text);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-btn {
+            border: 1.5px solid var(--gold);
+            padding: 8px 25px !important;
+            margin-left: 20px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
+
+        .nav-btn:hover { background: var(--gold); color: white !important; }
+
+        /* --- Hero Section (Updated with Background Photo) --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* เพิ่มรูปพื้นหลังแบบสว่างและหรูหรา */
+            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(252, 251, 250, 0.7)),
+                        url('http://googleusercontent.com/image_collection/image_retrieval/4272629244395944445_0');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax Effect */
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--dark-text);
+            text-shadow: 0 2px 10px rgba(255,255,255,0.5);
+        }
+
+        .motto {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .btn {
+            font-family: var(--body-font);
+            padding: 15px 45px;
+            background: var(--dark-text);
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1rem;
+            border-radius: 50px;
+            transition: 0.4s;
+        }
+
+        .btn:hover { background: var(--gold); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2); }
+
+        /* --- Services --- */
+        .services {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            background: white;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 50px 30px;
+            text-align: center;
+            transition: 0.4s;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 25px; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark-text); }
+        .card p { color: var(--gray-text); }
+        .read-more { color: var(--gold); font-weight: 600; display: block; margin-top: 20px; font-size: 0.9rem; text-decoration: underline; }
+
+        /* --- Our Story Section --- */
+        .about-section {
+            padding: 120px 10%;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-container { max-width: 800px; text-align: center; }
+
+        .subtitle {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            margin: 30px 0;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        /* --- Contact Section --- */
+        .contact-section {
+            padding: 100px 10%;
+            text-align: center;
+            background: white;
+        }
+
+        .contact-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-info i { color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #999;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">PP Auto-system</a>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="#services">บริการของเรา</a></li>
+            <li><a href="#about">เรื่องราวของเรา</a></li>
+            <li><a href="#contact" class="nav-btn">ติดต่อสอบถาม</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>นวัตกรรมเพื่อที่อยู่อาศัย</h1>
+        <div class="motto">"สร้างจากความฝัน เพื่อความฝัน"</div>
+        <p>ยกระดับการใช้ชีวิตด้วยระบบประตูอัตโนมัติ Smart Home และพลังงานสะอาดที่ยั่งยืน</p>
+        <a href="#services" class="btn">เริ่มต้นโครงการของคุณ</a>
+    </section>
+
+    <section id="services" class="services">
+        <a href="autodoor.html" class="card">
+            <i class="fas fa-door-open"></i>
+            <h3>ประตูอัตโนมัติ</h3>
+            <p>ระบบประตูและรั้วไฟฟ้ามาตรฐานสากล เพื่อความปลอดภัยและความสะดวกสบายสูงสุด</p>
+            <span class="read-more">ดูรายละเอียดเพิ่มเติม</span>
+        </a>
+
+        <a href="smarthome.html" class="card">
+            <i class="fas fa-home"></i>
+            <h3>Smart Home</h3>
+            <p>เปลี่ยนบ้านของคุณให้ล้ำสมัยด้วยระบบ Automation ควบคุมง่ายเพียงปลายนิ้ว</p>
+            <span class="read-more">ดูรายละเอียดเพิ่มเติม</span>
+        </a>
+
+        <a href="solar.html" class="card">
+            <i class="fas fa-solar-panel"></i>
+            <h3>พลังงานแสงอาทิตย์</h3>
+            <p>โซลูชันพลังงานสะอาด เพื่อการประหยัดค่าไฟและร่วมดูแลโลกไปพร้อมกัน</p>
+            <span class="read-more">ดูรายละเอียดเพิ่มเติม</span>
+        </a>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <span class="subtitle">มรดกและความมุ่งมั่น</span>
+            <h2>เรื่องราวของ PP Auto-system</h2>
+            <p class="quote">"ความแม่นยำในทุกระบบ คือความจริงใจที่เรามอบให้คู่ค้า"</p>
+            <div class="story-text">
+                <p>
+                    <strong>PP Auto-system</strong> เกิดจากการหลอมรวมระหว่างประสบการณ์ที่ส่งต่อกันมาและความฝันครั้งใหม่
+                    รากฐานของเราเติบโตมาจากความรู้ความเชี่ยวชาญในอุตสาหกรรมที่ส่งต่อจากรุ่นพ่อสู่รุ่นลูก
+                </p>
+                <p>
+                    ก่อตั้งโดย <strong>คุณพู (Phoo)</strong> และ <strong>คุณแพรว (Praew)</strong>
+                    ชื่อ "PP" ไม่ได้เป็นเพียงชื่อย่อของเราสองคน แต่เป็นสัญลักษณ์ของความมุ่งมั่นที่จะสร้างรากฐานชีวิต
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <span class="subtitle">ปรึกษาเรา</span>
+        <h2>ติดต่อผู้เชี่ยวชาญ</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <p>inthatwork@gmail.com</p>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <p>063-240-1224</p>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>กรุงเทพมหานคร</p>
+            </div>
+        </div>
+        <br><br>
+        <a href="mailto:inthatwork@gmail.com" class="btn">ส่งข้อความหาเรา</a>
+    </section>
+
+    <footer>
+        <p>&copy; EST. 2026 | BY PHOO & PRAEW</p>
+        <p style="font-size: 10px; margin-top: 10px; letter-spacing: 1px;">สร้างจากความฝัน เพื่อความฝัน</p>
+    </footer>
+
+</body>
+</html>
