@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories | PP Auto-system</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #C5A059; --dark-text: #2c2c2c; --light-bg: #FCFBFA; --body-font: 'Kanit', sans-serif; }
+        body { margin: 0; font-family: var(--body-font); background: var(--light-bg); color: var(--dark-text); line-height: 1.8; }
+        
+        /* Header Section */
+        .shop-header { padding: 60px 10% 20px; text-align: center; background: white; border-bottom: 1px solid #eee; }
+        .back-link { text-decoration: none; color: var(--gold); font-weight: 600; display: inline-block; margin-bottom: 15px; }
+        
+        /* Product Layout */
+        .product-container { padding: 60px 10% 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1200px; margin: auto; }
+        .product-gallery img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .product-details h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark-text); }
+        .status-tag { color: #27ae60; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .price-tag { font-size: 2rem; color: var(--gold); font-weight: 700; margin: 20px 0; }
+        
+        .specs { margin: 30px 0; padding: 20px; background: white; border-radius: 10px; }
+        .specs ul { padding-left: 20px; }
+        .specs li { margin-bottom: 10px; color: #555; }
+
+        /* --- Checkout Form Section --- */
+        .checkout-section { max-width: 800px; margin: 40px auto 80px; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.03); border: 1px solid #eee; }
+        .checkout-section h2 { font-family: 'Montserrat', sans-serif; color: var(--gold); margin-top: 0; }
+        
+        .order-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full { grid-column: span 2; }
+        label { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--dark-text); }
+        input, textarea { padding: 12px; border: 1.5px solid #eee; border-radius: 10px; font-family: 'Kanit'; font-size: 1rem; transition: 0.3s; }
+        input:focus, textarea:focus { outline: none; border-color: var(--gold); background: #fffcf5; }
+        
+        .confirm-btn { grid-column: span 2; padding: 18px; background: var(--dark-text); color: white; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: 0.4s; margin-top: 20px; }
+        .confirm-btn:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2); }
+
+        .payment-info { grid-column: span 2; margin-top: 25px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid var(--gold); }
+        .payment-info p { margin: 5px 0; font-size: 0.9rem; color: #666; }
+
+        @media (max-width: 768px) {
+            .product-container { grid-template-columns: 1fr; }
+            .order-form { grid-template-columns: 1fr; }
+            .form-group.full, .confirm-btn, .payment-info { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="shop-header">
+        <a href="index.html" class="back-link"><i class="fas fa-chevron-left"></i> กลับไปหน้าหลัก</a>
+        <h1>PP Accessories Shop</h1>
+    </div>
+
+    <div class="product-container">
+        <div class="product-gallery">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Smart WiFi Gate Opener">
+        </div>
+
+        <div class="product-details">
+            <span class="status-tag"><i class="fas fa-check-circle"></i> สินค้าพร้อมจำหน่าย</span>
+            <h1>Smart WiFi Remote Control</h1>
+            <p>ยกระดับประตูบ้านคุณให้ล้ำสมัย สั่งการได้จากทั่วทุกมุมโลกผ่านสมาร์ทโฟน</p>
+            
+            <div class="price-tag">฿1,xxx.00</div>
+            
+            <div class="specs">
+                <h3>คุณสมบัติเด่น:</h3>
+                <ul>
+                    <li><strong>Smart App:</strong> รองรับการสั่งงานผ่านมือถือ (iOS/Android)</li>
+                    <li><strong>Real-time Status:</strong> เช็คสถานะประตูเปิด-ปิดได้ตลอดเวลา</li>
+                    <li><strong>Voice Control:</strong> รองรับการสั่งงานด้วยเสียง</li>
+                    <li><strong>Easy Setup:</strong> ติดตั้งง่าย ใช้ร่วมกับมอเตอร์ประตูได้เกือบทุกรุ่น</li>
+                </ul>
+            </div>
+            <a href="#order-form-section" class="buy-now" style="width: 100%; display: block; box-sizing: border-box;">สั่งซื้อตอนนี้</a>
+        </div>
+    </div>
+
+    <section id="order-form-section" class="checkout-section">
+        <h2>ยืนยันการสั่งซื้อ</h2>
+        <p>กรุณากรอกข้อมูลให้ครบถ้วน เพื่อดำเนินการจัดส่งสินค้า</p>
+
+        <form action="https://formspree.io/f/xjgaddpq" method="POST" class="order-form">
+            
+            <input type="hidden" name="Product" value="Smart WiFi Gate Opener">
+            <input type="hidden" name="Price" value="1,xxx THB">
+
+            <div class="form-group">
+                <label>ชื่อ-นามสกุล</label>
+                <input type="text" name="name" placeholder="ชื่อผู้รับสินค้า" required>
+            </div>
+
+            <div class="form-group">
+                <label>เบอร์โทรศัพท์</label>
+                <input type="tel" name="phone" placeholder="08x-xxx-xxxx" required>
+            </div>
+
+            <div class="form-group full">
+                <label>ที่อยู่สำหรับการจัดส่ง</label>
+                <textarea name="address" rows="3" placeholder="บ้านเลขที่, ถนน, ตำบล, อำเภอ, จังหวัด, รหัสไปรษณีย์" required></textarea>
+            </div>
+
+            <div class="payment-info">
+                <strong><i class="fas fa-university"></i> ข้อมูลการชำระเงิน</strong>
+                <p>ธนาคาร: กสิกรไทย (K-Bank)</p>
+                <p>ชื่อบัญชี: บจก. พีพี ออโต้ ซิสเต็ม (หรือชื่อคุณ)</p>
+                <p>เลขที่บัญชี: xxx-x-xxxxx-x</p>
+                <p style="color: var(--gold); margin-top: 10px;">*หลังจากโอนเงินแล้ว ทีมงานจะติดต่อกลับเพื่อยืนยันออเดอร์ครับ</p>
+            </div>
+
+            <button type="submit" class="confirm-btn">ยืนยันการสั่งซื้อสินค้า</button>
+        </form>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8rem;">
+        <p>&copy; 2026 PP AUTO-SYSTEM | BY PHOO & PRAEW</p>
+    </footer>
+
+</body>
+</html>
